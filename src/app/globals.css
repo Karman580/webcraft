@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", var(--font-geist-sans), sans-serif;
+  --color-luxury-bg: var(--background);
+  --color-luxury-dark: var(--card-bg-solid);
+  --color-luxury-gray: var(--card-bg);
+  --color-luxury-muted: var(--text-muted);
+  --color-luxury-border: var(--card-border);
+  --color-luxury-border-hover: var(--border-hover);
+  --color-services-bg: var(--services-bg);
+  --color-header-bg: var(--header-bg);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-pink: var(--accent-pink);
+  
+  --animate-carousel-scroll: carousel-scroll 30s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 3s infinite alternate;
+  
+  @keyframes carousel-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  @keyframes pulse-glow {
+    0% {
+      box-shadow: 0 0 15px rgba(0, 102, 204, 0.2), 0 0 30px rgba(134, 92, 255, 0.1);
+    }
+    100% {
+      box-shadow: 0 0 25px rgba(0, 102, 204, 0.4), 0 0 50px rgba(134, 92, 255, 0.3);
+    }
+  }
+}
+
+:root {
+  --background: #030303;
+  --foreground: #f5f5f7;
+  --card-bg: rgba(10, 10, 10, 0.7);
+  --card-bg-solid: #0a0a0a;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.18);
+  --services-bg: #050507;
+  --text-muted: #86868b;
+  --text-medium: #a3a3a3;
+  --header-bg: rgba(3, 3, 3, 0.85);
+  
+  --accent-blue: #0066cc;
+  --accent-purple: #865cff;
+  --accent-cyan: #00f2fe;
+  --accent-pink: #ff007f;
+  --circle-bg: #16161a;
+  --mesh-color: rgba(255, 255, 255, 0.03);
+  
+  --primary-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  --luxury-gradient: linear-gradient(135deg, #ffffff 0%, #86868b 100%);
+  --blue-purple-gradient: linear-gradient(135deg, #2b80ff 0%, #865cff 100%);
+}
+
+html[data-theme="bright"] {
+  --background: #ffffff;
+  --foreground: #111827;
+  --card-bg: #ffffff;
+  --card-bg-solid: #ffffff;
+  --card-border: #E5E7EB;
+  --border-hover: #d1d5db;
+  --services-bg: #F8FAFC;
+  --text-muted: #4B5563;
+  --text-medium: #374151;
+  --header-bg: rgba(255, 255, 255, 0.85);
+  
+  --accent-blue: #1d4ed8;
+  --accent-purple: #7c3aed;
+  --accent-cyan: #0284c7;
+  --accent-pink: #db2777;
+  --circle-bg: #e2e8f0;
+  --mesh-color: rgba(0, 0, 0, 0.06);
+  
+  --primary-gradient: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+  --luxury-gradient: linear-gradient(135deg, #111827 0%, #4B5563 100%);
+  --blue-purple-gradient: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+}
+
+html[data-theme="bright"] .theme-logo {
+  filter: invert(1) brightness(0.2);
+}
+
+html, body {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+html {
+  scroll-behavior: auto; /* Required for Lenis smooth scroll */
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: var(--card-bg-solid);
+  border-color: var(--border-hover);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+}
+
+html[data-theme="night"] .glass-panel-hover:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-bg-solid);
+  border-radius: 4px;
+  border: 2px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Custom styles for animations */
+.glow-text-primary {
+  background: var(--luxury-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-text-blue-purple {
+  background: var(--blue-purple-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-text-gold {
+  background: linear-gradient(135deg, #ffe066 0%, #f5a623 50%, #f05a28 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Three.js canvas container */
+#three-canvas-container {
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.85;
+}
+
+/* Text reveal mask */
+.text-reveal-mask {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* For Lenis Smooth Scrolling */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Horizontal linear transparency fade mask */
+.mask-gradient-h {
+  mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+}
