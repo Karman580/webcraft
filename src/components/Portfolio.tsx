@@ -232,7 +232,7 @@ export default function Portfolio() {
                 className="w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-3xl glass-panel border border-luxury-border bg-luxury-dark/95 p-6 sm:p-8 shadow-2xl"
               >
                 {/* Header bar */}
-                <div className="flex items-center justify-between border-b border-luxury-border pb-4 mb-6">
+                <div className="flex items-center justify-between border-b border-luxury-border pb-4 mb-5">
                   <span className="text-[10px] font-bold text-accent-purple tracking-widest uppercase font-mono">
                     {selectedProject.tag}
                   </span>
@@ -244,74 +244,74 @@ export default function Portfolio() {
                   </button>
                 </div>
 
-                {/* Case Study Content */}
-                <h3 className="text-xl sm:text-2xl font-black text-foreground mb-6">
-                  {selectedProject.title}
-                </h3>
+                {/* Case Study Header with Title & Live Link adjoining on top-right */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+                  <h3 className="text-xl sm:text-2xl font-black text-foreground">
+                    {selectedProject.title}
+                  </h3>
+                  <a
+                    href={selectedProject.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-xl bg-background text-foreground border border-luxury-border hover:bg-foreground hover:text-background text-[11px] font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap"
+                  >
+                    Live Website
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
 
-                {/* Project homepage screenshot */}
-                <div className="w-full h-56 rounded-2xl relative overflow-hidden mb-8 border border-luxury-border">
+                {/* Project homepage screenshot - resized to fit into single frame */}
+                <div className="w-full h-44 rounded-2xl relative overflow-hidden mb-5 border border-luxury-border">
                   <img
                     src={selectedProject.image}
                     alt={`${selectedProject.title} homepage`}
                     className="absolute inset-0 w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md border border-luxury-border rounded-xl p-3 w-fit text-[11px] font-mono text-accent-cyan flex items-center gap-2">
-                    <Cpu className="w-4 h-4" />
+                  <div className="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md border border-luxury-border rounded-lg px-2.5 py-1.5 w-fit text-[10px] font-mono text-accent-cyan flex items-center gap-1.5">
+                    <Cpu className="w-3.5 h-3.5" />
                     Speed Score Verified: {selectedProject.metrics}
                   </div>
                 </div>
 
-                {/* Sections */}
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
-                  {/* Left Column (Overview & Techs) */}
-                  <div className="md:col-span-8 flex flex-col gap-6">
+                {/* Sections structured to fit cleanly in one frame */}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+                  {/* Left Column (Overview & Highlights) */}
+                  <div className="md:col-span-8 flex flex-col gap-4">
                     <div>
-                      <h4 className="text-xs uppercase tracking-wider text-luxury-muted/70 font-bold mb-2">Project Overview</h4>
-                      <p className="text-xs sm:text-sm text-luxury-muted/90 leading-relaxed font-medium">
+                      <h4 className="text-[10px] uppercase tracking-wider text-luxury-muted/70 font-bold mb-1">Project Overview</h4>
+                      <p className="text-[11px] sm:text-xs text-luxury-muted/95 leading-relaxed">
                         {selectedProject.summary}
                       </p>
                     </div>
 
-                    <div>
-                      <h4 className="text-xs uppercase tracking-wider text-luxury-muted/70 font-bold mb-2">The Challenge</h4>
-                      <p className="text-xs sm:text-sm text-luxury-muted leading-relaxed">
-                        {selectedProject.challenge}
-                      </p>
-                    </div>
-
-                    <div>
-                      <h4 className="text-xs uppercase tracking-wider text-luxury-muted/70 font-bold mb-2">Our Solution</h4>
-                      <p className="text-xs sm:text-sm text-luxury-muted/90 leading-relaxed font-medium">
-                        {selectedProject.solution}
-                      </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="text-[10px] uppercase tracking-wider text-luxury-muted/70 font-bold mb-1">The Challenge</h4>
+                        <p className="text-[10px] sm:text-[11px] text-luxury-muted/90 leading-relaxed">
+                          {selectedProject.challenge}
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="text-[10px] uppercase tracking-wider text-luxury-muted/70 font-bold mb-1">Our Solution</h4>
+                        <p className="text-[10px] sm:text-[11px] text-luxury-muted/90 leading-relaxed">
+                          {selectedProject.solution}
+                        </p>
+                      </div>
                     </div>
                   </div>
 
                   {/* Right Column (Sidebar specs) */}
-                  <div className="md:col-span-4 flex flex-col gap-6 border-t md:border-t-0 md:border-l border-luxury-border pt-6 md:pt-0 md:pl-6">
+                  <div className="md:col-span-4 flex flex-col gap-4 border-t md:border-t-0 md:border-l border-luxury-border pt-4 md:pt-0 md:pl-5">
                     <div>
-                      <h4 className="text-xs uppercase tracking-wider text-luxury-muted/70 font-bold mb-3">Tech Architecture</h4>
-                      <div className="flex flex-wrap gap-2">
+                      <h4 className="text-[10px] uppercase tracking-wider text-luxury-muted/70 font-bold mb-2">Tech Architecture</h4>
+                      <div className="flex flex-wrap gap-1.5">
                         {selectedProject.techs.map((t) => (
-                          <span key={t} className="bg-luxury-gray/40 border border-luxury-border rounded px-2.5 py-1 text-[10px] font-mono text-luxury-muted/90">
+                          <span key={t} className="bg-luxury-gray/40 border border-luxury-border rounded px-2 py-0.5 text-[9px] font-mono text-luxury-muted/95">
                             {t}
                           </span>
                         ))}
                       </div>
-                    </div>
-
-                    <div className="mt-auto">
-                      <a
-                        href={selectedProject.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full py-3 rounded-xl bg-background text-foreground border border-luxury-border hover:bg-foreground hover:text-background text-xs font-semibold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer text-center"
-                      >
-                        Visit Live Website
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
                     </div>
                   </div>
                 </div>
