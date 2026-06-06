@@ -78,8 +78,12 @@ export default function Hero() {
               transition={{ duration: 0.5 }}
               className="flex flex-col items-center gap-4"
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-accent-blue via-accent-purple to-accent-pink flex items-center justify-center font-black text-black text-2xl shadow-[0_0_30px_rgba(134,92,255,0.4)]">
-                W
+              <div className="relative w-20 h-20 flex items-center justify-center">
+                <img 
+                  src="/logo_transparent.png" 
+                  alt="WebCraft Technologies Logo" 
+                  className="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(134,92,255,0.4)] animate-pulse"
+                />
               </div>
               <h2 className="text-lg font-bold tracking-widest text-luxury-muted mt-2">
                 WEBCRAFT <span className="text-accent-purple font-light">TECHNOLOGIES</span>
