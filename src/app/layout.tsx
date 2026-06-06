@@ -24,6 +24,16 @@ export const metadata: Metadata = {
     title: "WebCraft Technologies | Premium 7-Day Website Studio",
     description: "Get a custom, stunning professional website in 7 days. Receive a free personalized homepage demo before you pay a single rupee.",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/logo_transparent.png", type: "image/png" }
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [
+      { url: "/logo.png", sizes: "180x180", type: "image/png" }
+    ]
+  }
 };
 
 export const viewport: Viewport = {
