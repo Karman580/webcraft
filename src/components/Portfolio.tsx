@@ -32,19 +32,6 @@ export default function Portfolio() {
 
   const projects: Project[] = [
     {
-      id: "glyptika",
-      title: "Glyptika Creative Agency",
-      category: "business",
-      tag: "Business Websites",
-      image: "/portfolio_glyptika.png",
-      metrics: "99 Speed | 0.4s LCP",
-      summary: "A premium, dark-luxury creative design and digital experience portfolio demonstrating Awwwards-level visual grids and fluid 3D transitions.",
-      challenge: "Providing zero-latency image grids and high-fidelity scrolling performance in a graphic-heavy presentation.",
-      solution: "We engineered custom canvas-preloaded visual pipelines, combined with Next.js static asset optimizations, resulting in a perfect 99 Speed score and 400ms load speeds.",
-      techs: ["Next.js", "TypeScript", "Tailwind CSS", "GSAP", "Framer Motion"],
-      url: "https://www.glyptika.com/",
-    },
-    {
       id: "risewave",
       title: "Risewave Smart Connectivity",
       category: "business",
