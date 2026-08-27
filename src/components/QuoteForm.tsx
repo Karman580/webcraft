@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import {
-  Send, CheckCircle, ShieldAlert, Coins, PhoneCall, Mail, User,
+  Send, ShieldAlert, Coins, PhoneCall, Mail, User,
   Briefcase, Building2, MessageCircle, FileText,
 } from "lucide-react";
 import { CONTACT, WHATSAPP_URL, MAILTO_URL } from "@/lib/contact";
@@ -92,7 +92,7 @@ export default function QuoteForm() {
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
           subject: `Quote request \u2014 ${formData.name} (${formData.projectType})`,
-          from_name: "WebCraft Website",
+          from_name: "Karman Singh Talwar — Website",
           replyto: formData.email,
           botcheck: isBot,
           Name: formData.name,
@@ -352,33 +352,59 @@ export default function QuoteForm() {
                     </button>
                 </form>
               ) : (
-                <div className="fade-in flex flex-col items-center justify-center text-center py-16 px-4 gap-6">
-                    <div className="w-16 h-16 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 flex items-center justify-center text-accent-cyan shadow-[0_0_20px_rgba(0,242,254,0.15)] animate-bounce">
-                      <CheckCircle className="w-8 h-8" />
+                <div className="fade-in flex flex-col items-center justify-center text-center py-20 px-4">
+                    {/* Animated tick */}
+                    <div className="relative w-24 h-24 mb-8 flex items-center justify-center">
+                      <span
+                        aria-hidden="true"
+                        className="tick-halo absolute inset-0 rounded-full bg-accent-cyan/15"
+                      />
+                      <svg
+                        viewBox="0 0 52 52"
+                        className="relative w-24 h-24"
+                        role="img"
+                        aria-label="Message sent"
+                      >
+                        <circle
+                          cx="26" cy="26" r="24"
+                          fill="none"
+                          stroke="var(--accent-cyan)"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          className="tick-ring"
+                          transform="rotate(-90 26 26)"
+                        />
+                        <path
+                          d="M14 27 L22 35 L38 19"
+                          fill="none"
+                          stroke="var(--accent-cyan)"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="tick-check"
+                        />
+                      </svg>
                     </div>
 
-                    <div>
-                      <h3 className="text-xl font-black text-foreground mb-2">Request Received</h3>
-                      <p className="text-xs text-luxury-muted max-w-sm leading-relaxed mx-auto">
-                        Your project details are logged. We&apos;ll review the scope and get back to
-                        you with the right technical approach and a quotation.
-                      </p>
-                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-black text-foreground mb-3">
+                      Thank You for Reaching Out
+                    </h3>
 
-                    <div className="bg-luxury-gray/40 border border-luxury-border rounded-2xl p-4 w-full max-w-xs text-left text-xs font-mono text-luxury-muted">
-                      <div className="text-accent-purple mb-1">{"// project_brief.json"}</div>
-                      <div>{`name:    "${formData.name}"`}</div>
-                      {formData.company && <div>{`company: "${formData.company}"`}</div>}
-                      <div>{`type:    "${formData.projectType}"`}</div>
-                      <div>{`budget:  "$${formData.budget.toLocaleString("en-US")}"`}</div>
-                      <div className="text-accent-cyan mt-1">{'status:  "QUEUED_FOR_REVIEW"'}</div>
-                    </div>
+                    <p className="text-[13px] sm:text-sm text-luxury-muted max-w-md leading-relaxed mx-auto mb-2">
+                      Your message is on its way to us
+                      {formData.name ? `, ${formData.name.trim().split(" ")[0]}` : ""}. We read
+                      every enquiry personally.
+                    </p>
+                    <p className="text-[13px] sm:text-sm text-luxury-muted max-w-md leading-relaxed mx-auto mb-10">
+                      We&apos;ll come back to you with the right technical approach and a
+                      proper quote — usually within a day.
+                    </p>
 
                     <a
                       href={WHATSAPP_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[10px] font-semibold uppercase tracking-wider text-accent-cyan hover:text-foreground transition-colors flex items-center gap-1.5"
+                      className="text-[10px] font-semibold uppercase tracking-wider text-accent-cyan hover:text-foreground transition-colors flex items-center gap-1.5 mb-6"
                     >
                       <MessageCircle className="w-3.5 h-3.5" />
                       Need it faster? Message on WhatsApp
@@ -391,7 +417,7 @@ export default function QuoteForm() {
                       }}
                       className="px-6 py-2.5 rounded-full border border-luxury-border text-[10px] font-semibold uppercase tracking-wider text-luxury-muted hover:text-foreground hover:border-luxury-border-hover transition-all cursor-pointer"
                     >
-                      Submit Another Project
+                      Send Another Message
                     </button>
                 </div>
               )}
