@@ -3,37 +3,33 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
+// Variable font: one file covering every weight, instead of the six separate
+// static weight files this was requesting before.
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "WebCraft Technologies | Premium Website & Web App Development Studio",
-  description: "WebCraft Technologies designs and builds world-class, premium, high-converting websites and custom web applications in just 7 days. Request a completely free homepage demo today.",
-  keywords: "web development, custom website, doctor website, clinic portal, startup website, portfolio design, next.js, high converting, website in 7 days, free demo website",
+  title: "Karman Singh Talwar | Software · AI · Systems",
+  description:
+    "We build the digital systems behind modern businesses — software, AI, mobile apps, web applications and cloud infrastructure, designed and connected around how your business actually works.",
+  keywords:
+    "software development, AI systems, AI agents, automation, web applications, mobile apps, cloud infrastructure, custom software, full stack development, Next.js, founder-led studio, Karman Singh Talwar",
   openGraph: {
-    title: "WebCraft Technologies | Premium 7-Day Website Studio",
-    description: "Get a custom, stunning professional website in 7 days. Receive a free personalized homepage demo before you pay a single rupee.",
+    title: "Karman Singh Talwar | Software · AI · Systems",
+    description:
+      "Software, AI, mobile apps, web applications and cloud infrastructure — designed, built and connected around how your business actually works.",
     type: "website",
-    url: "https://webcraft.tech",
+    siteName: "Karman Singh Talwar",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WebCraft Technologies | Premium 7-Day Website Studio",
-    description: "Get a custom, stunning professional website in 7 days. Receive a free personalized homepage demo before you pay a single rupee.",
+    title: "Karman Singh Talwar | Software · AI · Systems",
+    description:
+      "We build the digital systems behind modern businesses. Founder-led. Transparent scope and pricing.",
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/logo_transparent.png", type: "image/png" }
-    ],
-    shortcut: ["/favicon.ico"],
-    apple: [
-      { url: "/logo.png", sizes: "180x180", type: "image/png" }
-    ]
-  }
 };
 
 export const viewport: Viewport = {
@@ -51,6 +47,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${plusJakartaSans.variable} h-full antialiased`}
+      // The inline script below stamps data-theme before paint, so the server
+      // HTML and the first client render differ on that attribute by design.
+      suppressHydrationWarning
     >
       <head>
         <script

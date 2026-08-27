@@ -1,14 +1,18 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import OfferComparison from "@/components/OfferComparison";
+import ConnectedSystem from "@/components/ConnectedSystem";
 import Services from "@/components/Services";
-import HowItWorks from "@/components/HowItWorks";
+import AIAgents from "@/components/AIAgents";
 import Portfolio from "@/components/Portfolio";
-import WhyWebCraft from "@/components/WhyWebCraft";
-import TechStack from "@/components/TechStack";
+import WhyUs from "@/components/WhyUs";
+import Performance from "@/components/Performance";
+import Process from "@/components/Process";
+import Technology from "@/components/Technology";
 import Pricing from "@/components/Pricing";
+import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
-import ContactForm from "@/components/ContactForm";
+import About from "@/components/About";
+import QuoteForm from "@/components/QuoteForm";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -16,16 +20,23 @@ export default function Home() {
     <>
       <Header />
       <main className="flex-1">
+        {/* What we build → how it connects → AI → what we've built → why us →
+            performance → how we work → technology → pricing → proof → FAQ →
+            about → quote */}
         <Hero />
-        <OfferComparison />
+        <ConnectedSystem />
         <Services />
-        <HowItWorks />
+        <AIAgents />
         <Portfolio />
-        <WhyWebCraft />
-        <TechStack />
+        <WhyUs />
+        <Performance />
+        <Process />
+        <Technology />
         <Pricing />
+        <Testimonials />
         <FAQ />
-        <ContactForm />
+        <About />
+        <QuoteForm />
       </main>
       <Footer />
     </>

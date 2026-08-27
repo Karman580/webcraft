@@ -24,7 +24,7 @@ export default function SmoothScroll() {
     requestAnimationFrame(raf);
 
     // Make instance globally available for other packages (like GSAP ScrollTrigger)
-    (window as any).lenis = lenis;
+    (window as unknown as { lenis: Lenis }).lenis = lenis;
 
     return () => {
       lenis.destroy();
