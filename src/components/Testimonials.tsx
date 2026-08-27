@@ -79,7 +79,7 @@ export default function Testimonials() {
   const [featured, ...supporting] = TESTIMONIALS;
 
   return (
-    <section id="testimonials" className="relative py-24 bg-services-bg overflow-hidden">
+    <section id="testimonials" className="relative py-16 sm:py-24 bg-services-bg overflow-hidden">
       <div className="absolute top-1/3 right-0 w-[420px] h-[420px] bg-accent-cyan/5 rounded-full blur-[130px] pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

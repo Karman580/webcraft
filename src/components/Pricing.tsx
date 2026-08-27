@@ -82,7 +82,7 @@ const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="pricing-scope relative py-24 bg-luxury-bg overflow-hidden">
+    <section id="pricing" className="pricing-scope relative py-16 sm:py-24 bg-luxury-bg overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent-pink/5 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -138,9 +138,11 @@ export default function Pricing() {
           <span className="toggle-off text-xs font-semibold text-foreground transition-colors">Build only</span>
           <label
             htmlFor="support-toggle"
-            className="w-12 h-6.5 rounded-full bg-luxury-gray border border-luxury-border p-1 flex items-center transition-all duration-300 cursor-pointer flex-shrink-0"
+            className="flex items-center justify-center h-11 w-14 cursor-pointer flex-shrink-0"
           >
-            <span className="toggle-knob w-4.5 h-4.5 rounded-full bg-foreground transition-transform duration-300" />
+            <span className="w-12 h-6.5 rounded-full bg-luxury-gray border border-luxury-border p-1 flex items-center transition-all duration-300">
+              <span className="toggle-knob w-4.5 h-4.5 rounded-full bg-foreground transition-transform duration-300" />
+            </span>
             <span className="sr-only">Include six months of support and updates</span>
           </label>
           <span className="toggle-on text-xs font-semibold flex items-center gap-1.5 text-center transition-colors">
@@ -218,7 +220,7 @@ export default function Pricing() {
 
         {/* Talk to us — the prices above are a starting point */}
         <Reveal className="max-w-6xl mx-auto mb-10">
-          <div className="rounded-2xl border border-accent-cyan/25 bg-accent-cyan/5 px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-5">
+          <div className="rounded-2xl border border-accent-cyan/25 bg-accent-cyan/5 px-5 sm:px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
             <MessagesSquare className="w-5 h-5 text-accent-cyan flex-shrink-0" />
             <div className="flex-1">
               <h3 className="text-[13px] font-bold text-foreground mb-1">
@@ -234,7 +236,7 @@ export default function Pricing() {
             </div>
             <ScrollLink
               to="quote"
-              className="flex-shrink-0 px-5 py-3 rounded-xl text-[11px] font-semibold uppercase tracking-wider bg-background text-foreground border border-luxury-border hover:bg-foreground hover:text-background transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap"
+              className="flex-shrink-0 w-full sm:w-auto px-5 py-3.5 rounded-xl text-[11px] font-semibold uppercase tracking-wider bg-background text-foreground border border-luxury-border hover:bg-foreground hover:text-background transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap"
             >
               Get a Better Quote
               <ArrowRight className="w-3.5 h-3.5" />
@@ -277,7 +279,7 @@ export default function Pricing() {
                 </div>
               </div>
 
-              <div className="lg:w-[280px] flex-shrink-0 flex flex-col gap-3">
+              <div className="w-full lg:w-[280px] flex-shrink-0 flex flex-col gap-3">
                 <ScrollLink
                   to="quote"
                   className="w-full py-4 rounded-xl text-xs font-semibold uppercase tracking-wider bg-background text-foreground border border-luxury-border hover:bg-foreground hover:text-background shadow-lg transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"

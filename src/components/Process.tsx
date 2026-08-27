@@ -16,7 +16,7 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section id="process" className="relative py-28 bg-services-bg overflow-hidden">
+    <section id="process" className="relative py-16 sm:py-28 bg-services-bg overflow-hidden">
       <div className="absolute inset-0 mesh-grid-lg opacity-40 pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">

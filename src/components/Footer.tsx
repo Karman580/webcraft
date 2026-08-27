@@ -35,9 +35,9 @@ export default function Footer() {
     <footer className="relative bg-luxury-bg border-t border-luxury-border pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Upper grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 sm:gap-8 mb-12">
           {/* Brand */}
-          <div className="col-span-2 flex flex-col gap-4">
+          <div className="xs:col-span-2 flex flex-col gap-4">
             <div
               onClick={() => scrollToSection("hero")}
               className="flex items-center gap-2.5 cursor-pointer w-fit group"
@@ -132,7 +132,7 @@ export default function Footer() {
         </div>
 
         {/* Lower bar */}
-        <div className="border-t border-luxury-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-luxury-border pt-8 pb-[max(0px,env(safe-area-inset-bottom))] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[10px] text-luxury-muted/50 font-mono text-center sm:text-left">
             &copy; {currentYear} {CONTACT.name}. All rights reserved.
           </p>

@@ -30,7 +30,7 @@ const PRACTICES = [
 
 export default function Performance() {
   return (
-    <section id="performance" className="relative py-24 bg-luxury-bg overflow-hidden">
+    <section id="performance" className="relative py-16 sm:py-24 bg-luxury-bg overflow-hidden">
       <div className="absolute top-1/4 left-0 w-[460px] h-[400px] bg-accent-cyan/5 rounded-full blur-[140px] pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

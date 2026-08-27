@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  --breakpoint-xs: 25rem;
   --font-sans: "Plus Jakarta Sans", var(--font-geist-sans), sans-serif;
   --color-luxury-bg: var(--background);
   --color-luxury-dark: var(--card-bg-solid);
@@ -466,4 +467,52 @@ details summary { list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   .tick-ring, .tick-check { animation: none; stroke-dashoffset: 0; }
   .tick-halo { animation: none; opacity: 0; }
+}
+
+/* Horizontal rails (technology categories) scroll without a visible bar. */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Touch devices: no hover glow, no lift, and never a sticky :hover state
+   left behind after a tap. */
+@media (hover: none) {
+  .glow-card::before { display: none; }
+  .glow-card:hover,
+  .glass-panel:hover { transform: none; }
+}
+
+/* iOS zooms the page in when a focused input is under 16px. */
+@media (max-width: 640px) {
+  input, select, textarea { font-size: 16px; }
+}
+
+/* Respect the notch / home indicator on the whole page. */
+body {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Budget slider: the default thumb is far too small to drag on a phone. */
+input[type="range"] { -webkit-appearance: none; appearance: none; background: transparent; }
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px; border-radius: 9999px; background: var(--card-border);
+}
+input[type="range"]::-moz-range-track {
+  height: 6px; border-radius: 9999px; background: var(--card-border);
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 22px; height: 22px; margin-top: -8px;
+  border-radius: 9999px;
+  background: var(--accent-purple);
+  border: 2px solid var(--card-bg-solid);
+  box-shadow: 0 0 0 1px var(--card-border);
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 22px; height: 22px;
+  border-radius: 9999px;
+  background: var(--accent-purple);
+  border: 2px solid var(--card-bg-solid);
+  cursor: pointer;
 }

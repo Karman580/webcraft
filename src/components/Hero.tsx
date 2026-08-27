@@ -22,7 +22,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[92vh] flex flex-col justify-center items-center overflow-hidden pt-32 pb-24 px-6 bg-luxury-bg"
+      className="relative min-h-[92svh] flex flex-col justify-center items-center overflow-hidden pt-28 sm:pt-32 pb-20 sm:pb-24 px-5 sm:px-6 bg-luxury-bg"
     >
       {/* Ambient background — pure CSS */}
       <div className="absolute inset-0 ambient-field ambient-drift pointer-events-none" aria-hidden="true" />
@@ -42,7 +42,7 @@ export default function Hero() {
         </div>
 
         {/* Headline — the LCP element. Plain text, no JS. */}
-        <h1 className="text-[2rem] sm:text-5xl md:text-6xl lg:text-[4rem] font-black tracking-tight leading-[1.08] glow-text-primary mb-6 max-w-4xl">
+        <h1 className="text-[1.75rem] xs:text-[2rem] sm:text-5xl md:text-6xl lg:text-[4rem] font-black tracking-tight leading-[1.12] sm:leading-[1.08] glow-text-primary mb-5 sm:mb-6 max-w-4xl text-balance">
           We Build the Digital Systems Behind{" "}
           <span className="glow-text-blue-purple">Modern Businesses.</span>
         </h1>

@@ -49,7 +49,7 @@ const FAQS = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="relative py-24 bg-luxury-bg">
+    <section id="faq" className="relative py-16 sm:py-24 bg-luxury-bg">
       <div className="max-w-4xl mx-auto px-6 relative">
         <Reveal className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-luxury-border bg-luxury-gray/40 backdrop-blur-md mb-4">

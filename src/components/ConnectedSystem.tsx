@@ -130,7 +130,7 @@ function StackedNode({
 
 export default function ConnectedSystem() {
   return (
-    <section id="system" className="relative py-24 bg-services-bg border-y border-luxury-border overflow-hidden">
+    <section id="system" className="relative py-16 sm:py-24 bg-services-bg border-y border-luxury-border overflow-hidden">
       <div className="absolute inset-0 mesh-grid-lg opacity-60 pointer-events-none" aria-hidden="true" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[420px] bg-accent-purple/5 rounded-full blur-[150px] pointer-events-none" aria-hidden="true" />
 

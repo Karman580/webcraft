@@ -207,7 +207,7 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-24 bg-luxury-bg overflow-hidden">
+    <section id="services" className="relative py-16 sm:py-24 bg-luxury-bg overflow-hidden">
       <div className="absolute top-0 left-1/4 w-[500px] h-[400px] bg-accent-blue/5 rounded-full blur-[140px] pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

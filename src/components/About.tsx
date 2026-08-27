@@ -34,7 +34,7 @@ const PRINCIPLES = [
 
 export default function About() {
   return (
-    <section id="about" className="relative py-28 bg-services-bg overflow-hidden border-t border-luxury-border">
+    <section id="about" className="relative py-16 sm:py-28 bg-services-bg overflow-hidden border-t border-luxury-border">
       <div className="absolute top-0 right-1/4 w-[460px] h-[400px] bg-accent-purple/5 rounded-full blur-[140px] pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">

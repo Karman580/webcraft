@@ -8,6 +8,7 @@ import {
   GitBranch, Layers, Terminal, Zap, MessageSquare, Globe, Coffee, X,
 } from "lucide-react";
 import type { GenericIcon } from "@/lib/tech";
+import { useScrollLock } from "@/lib/useScrollLock";
 
 /* Brand marks arrive pre-resolved from the server, so simple-icons itself
    never ships to the browser — only the paths this page uses. */
@@ -77,6 +78,8 @@ export default function TechExplorer({ categories }: { categories: ResolvedCateg
   const [activeId, setActiveId] = useState(categories[0].id);
   const [selected, setSelected] = useState<ResolvedTech | null>(null);
 
+  useScrollLock(selected !== null);
+
   const active = categories.find((c) => c.id === activeId) ?? categories[0];
   const ActiveIcon = CATEGORY_ICONS[active.id] ?? Code2;
 
@@ -85,7 +88,7 @@ export default function TechExplorer({ categories }: { categories: ResolvedCateg
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-6xl mx-auto">
         {/* Category rail */}
         <div className="lg:col-span-4">
-          <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 -mx-6 px-6 lg:mx-0 lg:px-0">
+          <div className="no-scrollbar flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-2 lg:pb-0 -mx-6 px-6 lg:mx-0 lg:px-0">
             {categories.map((cat) => {
               const Icon = CATEGORY_ICONS[cat.id] ?? Code2;
               const isActive = cat.id === activeId;
@@ -94,7 +97,7 @@ export default function TechExplorer({ categories }: { categories: ResolvedCateg
                   key={cat.id}
                   onClick={() => { setActiveId(cat.id); setSelected(null); }}
                   aria-pressed={isActive}
-                  className={`flex items-center gap-3 rounded-xl border px-4 py-3 text-left transition-all duration-300 cursor-pointer flex-shrink-0 lg:w-full ${
+                  className={`snap-start flex items-center gap-3 rounded-xl border px-4 py-3.5 text-left transition-all duration-300 cursor-pointer flex-shrink-0 lg:w-full ${
                     isActive
                       ? "border-accent-purple/50 bg-accent-purple/10"
                       : "border-luxury-border bg-luxury-gray/30 hover:border-luxury-border-hover hover:bg-luxury-gray/50"
@@ -138,7 +141,7 @@ export default function TechExplorer({ categories }: { categories: ResolvedCateg
                   <button
                     key={`${t.name}-${i}`}
                     onClick={() => setSelected(t)}
-                    className="group flex items-center gap-2 bg-luxury-gray/40 border border-luxury-border rounded-lg pl-2 pr-2.5 py-1.5 text-[10.5px] font-mono text-luxury-muted hover:text-foreground hover:border-luxury-border-hover hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+                    className="group flex items-center gap-2 bg-luxury-gray/40 border border-luxury-border rounded-lg pl-2.5 pr-3 py-2.5 sm:py-2 text-[11px] sm:text-[10.5px] font-mono text-luxury-muted hover:text-foreground hover:border-luxury-border-hover hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
                   >
                     <span className="w-4 h-4 flex items-center justify-center [&>svg]:w-4 [&>svg]:h-4 grayscale group-hover:grayscale-0 transition-[filter] duration-200">
                       <TechMark tech={t} size={16} />
@@ -168,7 +171,7 @@ export default function TechExplorer({ categories }: { categories: ResolvedCateg
             <button
               onClick={() => setSelected(null)}
               aria-label="Close"
-              className="absolute top-4 right-4 p-1 rounded-full bg-luxury-gray/40 border border-luxury-border text-luxury-muted hover:text-foreground hover:border-luxury-border-hover transition-colors cursor-pointer"
+              className="absolute top-3 right-3 p-2.5 rounded-full bg-luxury-gray/40 border border-luxury-border text-luxury-muted hover:text-foreground hover:border-luxury-border-hover transition-colors cursor-pointer"
             >
               <X className="w-4 h-4" />
             </button>

@@ -134,7 +134,7 @@ export default function QuoteForm() {
     "text-[10px] uppercase font-bold tracking-wider text-luxury-muted/70 font-mono flex items-center gap-1.5";
 
   return (
-    <section id="quote" className="relative py-28 bg-services-bg overflow-hidden">
+    <section id="quote" className="relative py-16 sm:py-28 bg-services-bg overflow-hidden">
       <div className="absolute top-0 left-0 w-80 h-80 bg-accent-blue/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-accent-purple/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -196,7 +196,7 @@ export default function QuoteForm() {
 
           {/* Right column — form */}
           <div className="lg:col-span-7">
-            <div className="glass-panel theme-card-shadow rounded-3xl p-6 sm:p-8 border border-luxury-border bg-luxury-dark/10 shadow-2xl relative overflow-hidden min-h-[540px]">
+            <div className="glass-panel theme-card-shadow rounded-3xl p-5 sm:p-8 border border-luxury-border bg-luxury-dark/10 shadow-2xl relative overflow-hidden min-h-[520px]">
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="fade-in flex flex-col gap-5" noValidate>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -296,7 +296,7 @@ export default function QuoteForm() {
                         min="500" max="25000" step="500"
                         value={formData.budget}
                         onChange={(e) => setFormData((p) => ({ ...p, budget: parseInt(e.target.value, 10) }))}
-                        className="w-full accent-accent-purple bg-luxury-muted/20 h-1.5 rounded-lg appearance-none cursor-pointer"
+                        className="w-full h-6 cursor-pointer touch-pan-y"
                       />
                       <div className="flex justify-between text-[8px] font-bold text-luxury-muted/50 font-mono uppercase tracking-wide">
                         <span>$500 min</span>

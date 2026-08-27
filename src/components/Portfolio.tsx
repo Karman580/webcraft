@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { X, ExternalLink, Cpu, Eye, ArrowUpRight, Target, Wrench, Building2, Boxes } from "lucide-react";
 import { scrollToSection } from "@/lib/scroll";
+import { useScrollLock } from "@/lib/useScrollLock";
 
 /* Interactive (filters + case-study modal), so this stays a Client Component.
    Screenshots go through next/image: AVIF/WebP, responsive sizes, and lazy
@@ -116,6 +117,8 @@ export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [selected, setSelected] = useState<Project | null>(null);
 
+  useScrollLock(selected !== null);
+
   const showFeatured = activeCategory === "all";
   const featured = showFeatured ? PROJECTS.find((p) => p.featured) ?? null : null;
   const grid = PROJECTS.filter((p) =>
@@ -123,7 +126,7 @@ export default function Portfolio() {
   );
 
   return (
-    <section id="work" className="relative py-24 bg-luxury-bg">
+    <section id="work" className="relative py-16 sm:py-24 bg-luxury-bg">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-luxury-border bg-luxury-gray/40 backdrop-blur-md mb-4">
@@ -146,7 +149,7 @@ export default function Portfolio() {
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               aria-pressed={activeCategory === cat.id}
-              className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 cursor-pointer ${
+              className={`px-5 py-3 sm:py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 cursor-pointer ${
                 activeCategory === cat.id
                   ? "bg-foreground text-background font-bold shadow-md"
                   : "bg-luxury-gray/40 text-luxury-muted hover:text-foreground border border-luxury-border hover:border-luxury-border-hover"
@@ -309,7 +312,7 @@ export default function Portfolio() {
         {/* Case study modal */}
         {selected && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-6 bg-black/80 backdrop-blur-md"
             onClick={() => setSelected(null)}
             role="dialog"
             aria-modal="true"
@@ -318,7 +321,7 @@ export default function Portfolio() {
             <div
               onClick={(e) => e.stopPropagation()}
               data-lenis-prevent
-              className="w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-3xl glass-panel border border-luxury-border bg-luxury-dark/95 p-6 sm:p-8 shadow-2xl"
+              className="w-full max-w-3xl max-h-[92dvh] sm:max-h-[85dvh] overflow-y-auto overscroll-contain rounded-t-3xl sm:rounded-3xl glass-panel border border-luxury-border bg-luxury-dark/95 p-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:p-8 shadow-2xl"
             >
               <div className="flex items-center justify-between border-b border-luxury-border pb-4 mb-5">
                 <span className="text-[10px] font-bold text-accent-purple tracking-widest uppercase font-mono">
@@ -327,7 +330,7 @@ export default function Portfolio() {
                 <button
                   onClick={() => setSelected(null)}
                   aria-label="Close case study"
-                  className="p-1 rounded-full bg-luxury-gray/40 border border-luxury-border hover:border-luxury-border-hover text-luxury-muted hover:text-foreground transition-colors cursor-pointer"
+                  className="p-2.5 -mr-1 rounded-full bg-luxury-gray/40 border border-luxury-border hover:border-luxury-border-hover text-luxury-muted hover:text-foreground transition-colors cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -339,7 +342,7 @@ export default function Portfolio() {
                   href={selected.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl bg-background text-foreground border border-luxury-border hover:bg-foreground hover:text-background text-[11px] font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap"
+                  className="px-4 py-2 rounded-xl bg-background text-foreground border border-luxury-border hover:bg-foreground hover:text-background text-[11px] font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   Live Website
                   <ExternalLink className="w-3.5 h-3.5" />

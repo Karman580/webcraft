@@ -35,7 +35,7 @@ const FLOW = [
 
 export default function Technology() {
   return (
-    <section id="technology" className="relative py-28 bg-services-bg overflow-hidden border-y border-luxury-border">
+    <section id="technology" className="relative py-16 sm:py-28 bg-services-bg overflow-hidden border-y border-luxury-border">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-accent-cyan/5 rounded-full blur-[140px] pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
 import { scrollToSection } from "@/lib/scroll";
+import { useScrollLock } from "@/lib/useScrollLock";
 
 const NAV_LINKS = [
   { name: "What We Build", id: "services" },
@@ -18,6 +19,9 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [theme, setTheme] = useState<"night" | "bright">("night");
+
+  // Page must not scroll behind the open drawer.
+  useScrollLock(mobileMenuOpen);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -49,7 +53,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-        scrolled
+        scrolled || mobileMenuOpen
           ? "py-3 bg-header-bg backdrop-blur-xl border-b border-luxury-border shadow-md"
           : "py-6 bg-transparent border-b border-transparent"
       }`}
@@ -120,7 +124,7 @@ export default function Header() {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
-          className="lg:hidden p-2 text-foreground hover:text-accent-purple transition-colors cursor-pointer"
+          className="lg:hidden -mr-2.5 p-2.5 text-foreground hover:text-accent-purple transition-colors cursor-pointer"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -128,25 +132,26 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-x-0 top-[60px] bottom-0 bg-luxury-bg z-30 flex flex-col px-8 py-10 gap-5 text-[15px] font-semibold border-t border-luxury-border lg:hidden transition-all duration-500 ease-in-out overflow-y-auto ${
-          mobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
+        data-lenis-prevent
+        className={`fixed inset-x-0 top-[60px] bottom-0 bg-luxury-bg z-30 flex flex-col px-6 pt-6 pb-[max(2rem,env(safe-area-inset-bottom))] gap-1 text-[15px] font-semibold border-t border-luxury-border lg:hidden transition-all duration-300 ease-out overflow-y-auto overscroll-contain ${
+          mobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none invisible"
         }`}
       >
         {NAV_LINKS.map((link) => (
           <button
             key={link.id}
             onClick={() => go(link.id)}
-            className="text-left py-2.5 border-b border-luxury-border hover:text-accent-cyan transition-colors cursor-pointer text-foreground"
+            className="text-left py-4 border-b border-luxury-border active:text-accent-cyan hover:text-accent-cyan transition-colors cursor-pointer text-foreground"
           >
             {link.name}
           </button>
         ))}
 
-        <div className="flex items-center justify-between py-2.5 border-b border-luxury-border">
+        <div className="flex items-center justify-between py-4 border-b border-luxury-border">
           <span className="text-luxury-muted font-medium text-sm">Theme Mode</span>
           <button
             onClick={toggleTheme}
-            className="flex items-center gap-2 px-4 py-2 rounded-full border border-luxury-border bg-luxury-gray text-foreground font-semibold text-xs uppercase tracking-wider cursor-pointer"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-luxury-border bg-luxury-gray text-foreground font-semibold text-xs uppercase tracking-wider cursor-pointer"
           >
             {theme === "night" ? (
               <><Moon className="w-3.5 h-3.5 text-accent-purple" />Night</>
@@ -158,7 +163,7 @@ export default function Header() {
 
         <button
           onClick={() => go("quote")}
-          className="mt-4 px-6 py-4 rounded-full text-xs font-semibold tracking-wider uppercase bg-background text-foreground border border-luxury-border hover:bg-foreground hover:text-background transition-all duration-300 text-center flex items-center justify-center gap-2 cursor-pointer"
+          className="mt-6 px-6 py-4 rounded-full text-xs font-semibold tracking-wider uppercase bg-background text-foreground border border-luxury-border hover:bg-foreground hover:text-background transition-all duration-300 text-center flex items-center justify-center gap-2 cursor-pointer"
         >
           Get a Free Quote
           <ArrowRight className="w-4 h-4" />

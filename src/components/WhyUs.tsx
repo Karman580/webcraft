@@ -232,7 +232,7 @@ const PILLARS = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="relative py-28 bg-services-bg border-y border-luxury-border">
+    <section id="why-us" className="relative py-16 sm:py-28 bg-services-bg border-y border-luxury-border">
       <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
         <Reveal>
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-luxury-border bg-luxury-gray/30 backdrop-blur-md w-fit mb-6 mx-auto">
