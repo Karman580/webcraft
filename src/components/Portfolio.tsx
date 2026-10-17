@@ -86,6 +86,20 @@ const PROJECTS: Project[] = [
     techs: ["React", "Vite", "Tailwind CSS", "Local SEO Schema", "Vercel"],
     url: "https://docweb-alpha.vercel.app/",
   },
+  {
+    id: "avenoir",
+    title: "Avenoir Decor Event Styling",
+    category: "business",
+    tag: "Event Styling & Decor",
+    business: "Indoor and outdoor event styling for Brampton and the Greater Toronto Area.",
+    image: "/portfolio_avenoir.png",
+    metrics: "91 Speed | 1.4s LCP",
+    summary: "A premium, editorial-style site with an immersive hero, service showcases, an interactive portfolio gallery, customizable packages, and a streamlined quote request with WhatsApp contact built in.",
+    challenge: "Presenting a highly visual, consultation-led styling service so browsing the work leads straight into a quote request instead of a dead end.",
+    solution: "We hand-built a single static page — inline critical CSS, no framework runtime, IntersectionObserver scroll reveals and lazy-loaded gallery imagery — deployed to Vercel's edge.",
+    techs: ["HTML5", "Vanilla JavaScript", "Google Fonts", "WhatsApp Link API", "Vercel"],
+    url: "https://www.avenoirdecor.com/",
+  },
 ];
 
 const CATEGORY_LABELS: Record<string, string> = {

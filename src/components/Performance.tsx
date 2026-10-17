@@ -6,17 +6,17 @@ import Reveal from "./Reveal";
 
 /* Server Component.
 
-   Every number here comes from the four projects in the Work section — the
+   Every number here comes from the five projects in the Work section — the
    same figures shown on each case study. Nothing is extrapolated into an
    average, a guarantee, or a statistic about client outcomes. */
 
 const SCORES = [
-  { label: "Performance",    value: "99+",  ring: 99,  color: "var(--accent-cyan)",   note: "Lighthouse, live sites" },
+  { label: "Performance",    value: "91+",  ring: 91,  color: "var(--accent-cyan)",   note: "Lighthouse, live sites" },
   { label: "Accessibility",  value: "96+",  ring: 96,  color: "var(--accent-purple)", note: "Usable by more people" },
-  { label: "Best Practices", value: "100",  ring: 100, color: "var(--accent-pink)",   note: "Modern, correct code" },
+  { label: "Best Practices", value: "96+",  ring: 96, color: "var(--accent-pink)",   note: "Modern, correct code" },
 ];
 
-const LCP = { label: "LCP", value: "0.3–0.5s", note: "Main content, on the projects listed above" };
+const LCP = { label: "LCP", value: "0.3–1.4s", note: "Main content, on the projects listed above" };
 
 const PRACTICES = [
   { title: "Reliability",         body: "Built to keep working on a bad day — slow connections, odd inputs, everything at once.", icon: ShieldCheck },
