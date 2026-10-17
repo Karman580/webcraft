@@ -92,7 +92,7 @@ export default function QuoteForm() {
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
           subject: `Quote request \u2014 ${formData.name} (${formData.projectType})`,
-          from_name: "Karman Singh Talwar — Website",
+          from_name: "AutoMesh Works — Website",
           replyto: formData.email,
           botcheck: isBot,
           Name: formData.name,

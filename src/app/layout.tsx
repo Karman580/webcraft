@@ -12,23 +12,23 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Karman Singh Talwar | Software · AI · Systems",
+  title: "AutoMesh Works | Software · AI · Systems",
   description:
-    "We build the digital systems behind modern businesses — software, AI, mobile apps, web applications and cloud infrastructure, designed and connected around how your business actually works.",
+    "AutoMesh Works builds the digital systems behind modern businesses — custom software, AI and automation, AI agents, web and mobile applications and cloud infrastructure, designed and connected around how your business actually works.",
   keywords:
-    "software development, AI systems, AI agents, automation, web applications, mobile apps, cloud infrastructure, custom software, full stack development, Next.js, founder-led studio, Karman Singh Talwar",
+    "AutoMesh Works, software development, AI systems, AI agents, automation, web applications, mobile apps, cloud infrastructure, custom software, full stack development, Next.js, founder-led studio, Karman Singh Talwar",
   openGraph: {
-    title: "Karman Singh Talwar | Software · AI · Systems",
+    title: "AutoMesh Works | Software · AI · Systems",
     description:
-      "Software, AI, mobile apps, web applications and cloud infrastructure — designed, built and connected around how your business actually works.",
+      "AutoMesh Works — software, AI, mobile apps, web applications and cloud infrastructure, designed, built and connected around how your business actually works.",
     type: "website",
-    siteName: "Karman Singh Talwar",
+    siteName: "AutoMesh Works",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Karman Singh Talwar | Software · AI · Systems",
+    title: "AutoMesh Works | Software · AI · Systems",
     description:
-      "We build the digital systems behind modern businesses. Founder-led. Transparent scope and pricing.",
+      "AutoMesh Works builds the digital systems behind modern businesses. Founder-led. Transparent scope and pricing.",
   },
 };
 

@@ -46,7 +46,7 @@ export default function Footer() {
                 src="/logo-mark.png"
                 alt=""
                 aria-hidden="true"
-                width={96}
+                width={39}
                 height={32}
                 className="h-8 w-auto object-contain theme-logo group-hover:scale-105 transition-transform duration-300"
               />
@@ -61,8 +61,9 @@ export default function Footer() {
             </div>
 
             <p className="text-luxury-muted/70 text-xs max-w-xs leading-relaxed mt-2 font-medium">
-              We build the digital systems behind modern businesses — software, AI, mobile,
-              web and cloud, designed around how the business actually works.
+              AutoMesh Works builds the digital systems behind modern businesses — software,
+              AI and automation, mobile, web and cloud, designed around how the business
+              actually works.
             </p>
 
             <div className="flex flex-col gap-1.5 mt-2 text-xs text-luxury-muted/70 font-mono">
@@ -70,6 +71,7 @@ export default function Footer() {
                 {CONTACT.email}
               </a>
               <span>{CONTACT.phone}</span>
+              <span>{CONTACT.altPhone}</span>
               <span>{CONTACT.location}</span>
             </div>
           </div>

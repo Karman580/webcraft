@@ -68,7 +68,10 @@ export default function About() {
                     />
                     <div>
                       <h3 className="text-base font-black text-foreground leading-tight">{CONTACT.name}</h3>
-                      <span className="text-[9px] font-mono font-bold tracking-[0.2em] uppercase text-accent-purple">
+                      <span className="block text-[9px] font-mono font-bold tracking-[0.2em] uppercase text-accent-purple">
+                        {`By ${CONTACT.founder}`}
+                      </span>
+                      <span className="block text-[9px] font-mono font-bold tracking-[0.2em] uppercase text-luxury-muted/70 mt-0.5">
                         Founder · Engineer
                       </span>
                     </div>
@@ -101,7 +104,8 @@ export default function About() {
           <div className="lg:col-span-7">
             <Reveal variant="right">
               <p className="text-luxury-muted text-sm sm:text-base leading-relaxed mb-4">
-                A founder-led studio, run by <span className="text-foreground font-semibold">{CONTACT.name}</span>.
+                <span className="text-foreground font-semibold">{CONTACT.name}</span> is a
+                founder-led studio, run by <span className="text-foreground font-semibold">{CONTACT.founder}</span>.
                 Not a chain of handovers — the person who understands the problem is the one who
                 designs the system and writes the code that runs it.
               </p>

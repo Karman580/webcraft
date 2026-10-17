@@ -66,14 +66,14 @@ export default function Header() {
         >
           <img
             src="/logo-mark.png"
-            alt="Karman Singh Talwar"
-            width={108}
+            alt="AutoMesh Works"
+            width={44}
             height={36}
             className="h-9 w-auto object-contain group-hover:scale-105 transition-transform duration-300 theme-logo"
           />
           <span className="flex flex-col leading-none">
             <span className="font-extrabold text-[15px] sm:text-base tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent group-hover:to-foreground transition-all duration-300">
-              Karman Singh Talwar
+              AutoMesh Works
             </span>
             <span className="hidden sm:block text-[8px] font-bold tracking-[0.22em] uppercase text-luxury-muted/70 font-mono mt-1">
               Software <span className="text-accent-purple">·</span> AI <span className="text-accent-purple">·</span> Systems
